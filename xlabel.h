@@ -2,10 +2,6 @@
 #include "dayscheduleui.h"
 #include "xdialog.h"
 
-//#include <QtWidgets/qlabel.h>
-//#include <QtWidgets/qgridlayout.h>
-//#include <Qt3DInput/qmouseevent.h>
-//#include <QtCore/qmap.h>
 #include <QLabel>
 #include <QGridLayout>
 #include <QTimeEdit>

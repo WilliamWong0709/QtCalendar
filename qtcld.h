@@ -3,11 +3,6 @@
 
 #include "xlabel.h"
 
-//#include <QtWidgets/qmainwindow.h>
-//#include <QtCore/qdatetime.h>
-//#include <QtWidgets/qspinbox.h>
-//#include <QtWidgets/qcombobox.h>
-//#include <QtWidgets/qgridlayout.h>
 #include <QMainWindow>
 #include <QSpinBox>
 #include <QComboBox>

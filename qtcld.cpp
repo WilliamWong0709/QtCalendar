@@ -1,8 +1,5 @@
 #include "qtcld.h"
 
-//#include <QtWidgets/qapplication.h>
-//#include <QtWidgets/qgroupbox.h>
-//#include <QtCore/qdebug.h>
 #include <QApplication>
 #include <QGroupBox>
 #include <QDebug>
@@ -200,7 +197,7 @@ void QtCld::updateCld()
 		mCldLayout->addWidget(mLabels[k], k / 7, k % 7, 1, 1, Qt::AlignCenter);
 	}
 	
-	/* Hight today's label if this month is displayed, otherwise clear previous highlight label. */
+	/* Highlight today's label if this month is displayed, otherwise clear previous highlight label. */
 	if (isHighlight) {
 		mHighlightLabelIndex = month1st.dayOfWeek() - 1 + mTodayDate.day() - 1 + 7;
 		QString newStyleSheet = mLabels[mHighlightLabelIndex]->styleSheet() + QString("background-color:yellow;");

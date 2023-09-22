@@ -1,7 +1,5 @@
 #include "xlabel.h"
 
-//#include <QtWidgets/qboxlayout.h>
-//#include <QtWidgets/qgroupbox.h>
 #include <QDebug>
 #include <QString>
 
@@ -10,13 +8,11 @@ extern QMap<QDate, QMap<QTime, QString> > gSchedules;
 XLabel::XLabel(QWidget *parent, Qt::WindowFlags f)
 	: QLabel(parent, f),
 	mDate(QDate()),
-	//mDaySchedule(QMap<QString, QString>()),
 	mTime(QTime()),
 	mActivityStr(QString()),
 	mDayScheduleUiVec(QVector<DayScheduleUi *>()),
 	mModifyBtnVec(QVector<QPushButton*>()),
 	mDeleteBtnVec(QVector<QPushButton*>()),
-	//mSignalMapper(new QSignalMapper(this)),
 	mTimeEdit(nullptr),
 	mLineEdit(nullptr),
 	mSaveBtn(nullptr),
@@ -31,13 +27,11 @@ XLabel::XLabel(QWidget *parent, Qt::WindowFlags f)
 XLabel::XLabel(const QString &text, QWidget *parent, Qt::WindowFlags f)
 	: QLabel(text, parent, f),
 	mDate(QDate()),
-	//mDaySchedule(QMap<QString, QString>()),
 	mTime(QTime()),
 	mActivityStr(QString()),
 	mDayScheduleUiVec(QVector<DayScheduleUi *>()),
 	mModifyBtnVec(QVector<QPushButton*>()),
 	mDeleteBtnVec(QVector<QPushButton*>()),
-	//mSignalMapper(new QSignalMapper(this)),
 	mTimeEdit(nullptr),
 	mLineEdit(nullptr),
 	mSaveBtn(nullptr),
@@ -108,7 +102,6 @@ void XLabel::updateDaySchedule()
 	mDeleteBtnVec.clear();
 	int i = 0;
 	for (auto it = gSchedules[mDate].begin(); it != gSchedules[mDate].end();it++, i++) {
-		//mDaySchedule.insert(it.key(), it.value());
 		QLabel *timeLabel = new QLabel(it.key().toString(QString("hh:mm:ss")), this);
 		QLabel *activityLabel = new QLabel(it.value(), this);
 		QPushButton *modifyBtn = new QPushButton(tr("Modify"), this);
@@ -127,8 +120,6 @@ void XLabel::updateDaySchedule()
 		gridLayout->addWidget(mModifyBtnVec.last(), i, 2);
 		gridLayout->addWidget(mDeleteBtnVec.last(), i, 3);
 	}
-
-	//qDebug() << "In updateDaySchedule(). mDayScheduleMap.size() = " << mDayScheduleMap.size();
 }
 
 void XLabel::changeActivity()
@@ -248,8 +239,6 @@ void XLabel::deleteActivitySilently(int index)
 
 void XLabel::updateStr()
 {
-	//qDebug() << "In updateStr()";
-
 	mTime = mTimeEdit->time();
 	mActivityStr = mLineEdit->text().trimmed();
 	

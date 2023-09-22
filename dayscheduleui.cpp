@@ -13,8 +13,4 @@ DayScheduleUi::~DayScheduleUi()
 	delete mActivityLbl;
 	delete mModifyBtn;
 	delete mDeleteBtn;
-	//mTimeLbl = mActivityLbl = nullptr;
-	//mModifyBtn = mDeleteBtn = nullptr;
-
-	//qDebug() << "Deconstructing DayScheduleUi";
 }
